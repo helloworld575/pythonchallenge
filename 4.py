@@ -1,3 +1,4 @@
+
 import re
 import urllib2
 
@@ -8,6 +9,9 @@ while num is not None:
     request = urllib2.Request(url)
     response = urllib2.urlopen(request)
     pattern = re.compile('and the next nothing is (.*?)$')
-    num = re.search(pattern,response.read()).group(1)
-    print response.read()
+    string = response.read()
+    #string2 = response.read() the object will be delete after used
+    num = re.search(pattern,string).group(1)
+    print string
+    print string2
     print num
